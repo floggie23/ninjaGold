@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="yg"><p>Your Coins :  </p> <p id="ccoins"> {{request.session.current_coins}}</p></div>
+    <div class="places">
+        <div class="place">
+            <h4>Farm</h4>
+            <p>(earns 10-20 golds)</p>
+            <a href="/take/farm"><button>Find Gold</button></a>
+        </div>
+        <div class="place">
+            <h4>Cave</h4>
+            <p>(earns 5-10 golds)</p>
+            <a href="/take/cave"><button>Find Gold</button></a>
+        </div>
+        <div class="place">
+            <h4>House</h4>
+            <p>(earns 2-5 golds)</p>
+            <a href="/take/house"><button>Find Gold</button></a>
+        </div>
+        <div class="place">
+            <h4>Casino</h4>
+            <p>(earns/takes 0-50 golds)</p>
+            <a href="/take/casino"><button>Find Gold</button></a>
+    </div>
+</div>
+<p>Activities:</p>
+<div class="activities">
+{% for activity in request.session.activities %}
+    <p style="color: {{activity.color}};"> {{activity.activity}} {{activity.gold}} {{activity.place}} {{activity.time}} </p>
+{% endfor %}
+</div>
+</body>
+</html>

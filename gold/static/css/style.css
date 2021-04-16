@@ -1,0 +1,30 @@
+.yg{
+    display: flex;
+}
+body{
+    padding: 25px;
+}
+#ccoins{
+    width: 150px;
+    height: auto;
+    border: 2px solid black;
+    margin-left: 10px;
+}
+
+.places{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.place{
+    border: 2px black solid;
+    width: 250px;
+    height: 160px;
+    text-align: center;
+}
+.activities{
+    width: 940px;
+    height: auto;
+    min-height: 80px;
+    border: solid black 2px;
+}
